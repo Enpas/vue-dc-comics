@@ -7,7 +7,7 @@
 
       <ul>
         <li v-for="(link, index) in links" :key="index" :class="{'active': link.current === true}">
-          <a href="link.url">{{link.text}}</a>
+          <a href="link.url" :class="{'active': link.current === true}">{{link.text}}</a>
         </li>
       </ul>
 
@@ -83,20 +83,19 @@ export default {
   
   .container {
     display: flex;
-    height: 100%;
+    height: 131px;
     justify-content: space-between;
     align-items: center;
     img {
-      height: 70px;
+      height: 85px;
     }
     ul {
       display: flex;
-      height: 100%;
+      height: 131px;
       li {
         margin: 0 10px;
         &.active {
-          color: $light-blue;
-          border-bottom: 4px solid $light-blue;
+          border-bottom: 5px solid $light-blue;
         }
       }
       a {
@@ -104,8 +103,11 @@ export default {
         color: $dark;
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 11px;
-        line-height: 100px;
+        font-size: 12px;
+        line-height: 117px;
+        &.active {
+          color: $light-blue;
+        }
       }
     }
   }

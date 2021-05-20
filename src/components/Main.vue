@@ -16,11 +16,11 @@ export default {
 
 <style lang="scss" scoped>
   @import '../assets/style/vars.scss';
-  
+
   .container {
     background-color: $dark;
-    padding-top:60px;
-    padding-bottom:60px;
+    padding-top:62px;
+    padding-bottom:62px;
     h2 {
       color: #FFF;
     }
