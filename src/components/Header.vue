@@ -6,8 +6,8 @@
       <a href="/"><img src="../assets/img/dc-logo.png" alt="Logo"></a>
 
       <ul>
-        <li v-for="(link, index) in links" :key="index" :class="{'active': link.current === true}">
-          <a href="link.url" :class="{'active': link.current === true}">{{link.text}}</a>
+        <li v-for="(link, index) in links" :key="index" :class="{'active': link.current === true}" @click="activeOn(index)">
+          <a :href="link.url" :class="{'active': link.current === true}">{{link.text}}</a>
         </li>
       </ul>
 
@@ -24,57 +24,67 @@ export default {
       links: [
         {
           text: 'Charachters',
-          url: '#',
+          url: 'javascript:void(0)',
           current: false
         },
         {
           text: 'Comics',
-          url: '#',
+          url: 'javascript:void(0)',
           current: true
         },
         {
           text: 'Movies',
-          url: '#',
+          url: 'javascript:void(0)',
           current: false
         },
         {
           text: 'Tv',
-          url: '#',
+          url: 'javascript:void(0)',
           current: false
         },
         {
           text: 'Games',
-          url: '#',
+          url: 'javascript:void(0)',
           current: false
         },
         {
           text: 'Collectibles',
-          url: '#',
+          url: 'javascript:void(0)',
           current: false
         },
         {
           text: 'Videos',
-          url: '#',
+          url: 'javascript:void(0)',
           current: false
         },
         {
           text: 'Fans',
-          url: '#',
+          url: 'javascript:void(0)',
           current: false
         },
         {
           text: 'News',
-          url: '#',
+          url: 'javascript:void(0)',
           current: false
         },
         {
           text: 'Shop',
-          url: '#',
+          url: 'javascript:void(0)',
           current: false
         }
       ]
     }
   },
+
+  methods: {
+    activeOn(index) {
+      this.links.forEach((link) => {
+        link.current = false;
+      })
+      this.links[index].current = true
+    }
+  }
+
 }
 </script>
 
